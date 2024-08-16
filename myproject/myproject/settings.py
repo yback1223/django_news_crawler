@@ -34,11 +34,15 @@ import os
 from datetime import datetime
 
 LOG_DIR = os.path.join(BASE_DIR, 'cron_logs')
-LOG_FILE = os.path.join(LOG_DIR, f"news_crawler_{datetime.now().strftime('%Y-%m-%d')}.log")
+
+news_crawler_log_file = os.path.join(LOG_DIR, f"news_crawler_{datetime.now().strftime('%Y-%m-%d')}.log")
+news_remover_log_file = os.path.join(LOG_DIR, f"news_remover_{datetime.now().strftime('%Y-%m-%d')}.log")
 
 CRONJOBS = [
-    ('0 * * * *', '/Users/yback/projects/django/news_crawler/myvenv/bin/python /Users/yback/projects/django/news_crawler/myproject/manage.py news_crawler >> /Users/yback/projects/django/news_crawler/myproject/cron_logs/news_crawler_2024-08-15.log 2>&1')
+    ('0 * * * *', f'/Users/yback/projects/django/news_crawler/myvenv/bin/python /Users/yback/projects/django/news_crawler/myproject/news/manage.py news_crawler >> {news_crawler_log_file} 2>&1'),
+    ('0 0 * * *', f'/Users/yback/projects/django/news_crawler/myvenv/bin/python /Users/yback/projects/django/news_crawler/myproject/news/manage.py news_remover >> {news_remover_log_file} 2>&1'),
 ]
+
 
 MIDDLEWARE = [
 	'django.middleware.security.SecurityMiddleware',

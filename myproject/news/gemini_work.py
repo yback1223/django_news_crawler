@@ -36,7 +36,7 @@ class GeminiWork:
 				"temperature": 1,
 				"top_p": 0.95,
 				"top_k": 64,
-				"max_output_tokens": 1024,  # 줄어든 token 제한
+				"max_output_tokens": 1024,
 				"response_mime_type": "text/plain",
 			}
 

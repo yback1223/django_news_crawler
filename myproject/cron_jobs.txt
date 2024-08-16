@@ -1,0 +1,2 @@
+0 * * * * /Users/yback/projects/django/news_crawler/myproject/run_news_crawler.sh
+0 0 * * * /Users/yback/projects/django/news_crawler/myproject/run_news_remover.sh
