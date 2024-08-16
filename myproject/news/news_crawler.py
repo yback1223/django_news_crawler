@@ -57,6 +57,7 @@ class NewsCrawler:
 
 	def save_article(self, article, full_link, model):
 		try:
+			
 			model.objects.create(
 				title=article['headline'],
 				content=article['content'],

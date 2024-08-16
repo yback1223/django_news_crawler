@@ -28,6 +28,8 @@ INSTALLED_APPS = [
 	'django.contrib.staticfiles',
 	'news',
 	'django_crontab',
+	'rest_framework',
+	'drf_yasg',
 ]
 
 import os
