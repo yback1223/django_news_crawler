@@ -41,8 +41,8 @@ news_crawler_log_file = os.path.join(LOG_DIR, f"news_crawler_{datetime.now().str
 news_remover_log_file = os.path.join(LOG_DIR, f"news_remover_{datetime.now().strftime('%Y-%m-%d')}.log")
 
 CRONJOBS = [
-    ('0 * * * *', f'/Users/yback/projects/django/news_crawler/myvenv/bin/python /Users/yback/projects/django/news_crawler/myproject/news/manage.py news_crawler >> {news_crawler_log_file} 2>&1'),
-    ('0 0 * * *', f'/Users/yback/projects/django/news_crawler/myvenv/bin/python /Users/yback/projects/django/news_crawler/myproject/news/manage.py news_remover >> {news_remover_log_file} 2>&1'),
+    ('0 * * * *', f'/Users/yback/projects/django/news_crawler/myvenv/bin/python /Users/yback/projects/django/news_crawler/backend/news/manage.py news_crawler >> {news_crawler_log_file} 2>&1'),
+    ('0 0 * * *', f'/Users/yback/projects/django/news_crawler/myvenv/bin/python /Users/yback/projects/django/news_crawler/backend/news/manage.py news_remover >> {news_remover_log_file} 2>&1'),
 ]
 
 
@@ -56,7 +56,7 @@ MIDDLEWARE = [
 	'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'myproject.urls'
+ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
 	{
@@ -74,7 +74,7 @@ TEMPLATES = [
 	},
 ]
 
-WSGI_APPLICATION = 'myproject.wsgi.application'
+WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
